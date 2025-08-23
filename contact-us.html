@@ -44,7 +44,7 @@
   <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
       <div class="row">
-    <a href="/index.html">
+        <a href="/index.html">
           <h1 class="header-txt">Comfort Keys Oy</h1>
         </a>
         <div class="col-12">
@@ -56,12 +56,13 @@
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
 
-              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="index.html">Home</a></li>
               <li><a href="services.html">Services</a></li>
               <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="contact-us.html">Contact Us</a></li>
+              <li><a href="#contactnow" class="active">Contact Us</a></li>
               <li>
-                <div class="main-white-button"><a href="#"><i class="fa fa-plus"></i> Book Services & Rentals</a></div>
+                <div class="main-white-button"><a href="https://prastikaac.github.io/sara-website/pricing.html"><i
+                      class="fa fa-plus"></i> Book Services & Rentals</a></div>
               </li>
             </ul>
             <a class='menu-trigger'>
@@ -88,6 +89,110 @@
     </div>
   </div>
 
+
+
+  <!-- Success Popup -->
+  <div id="successPopup" class="popup-overlay">
+    <div class="popup-content">
+      <span id="closePopup" class="close-btn">&times;</span>
+      <h3>Message Sent!</h3>
+      <p>Your message has been sent successfully. We’ll get back to you soon.</p>
+      <a href="/" class="home-btn">Back to Home</a>
+    </div>
+  </div>
+
+
+  <style>
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      width: 450px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .popup-content h3 {
+      margin-bottom: 10px;
+      color: #28a745;
+    }
+
+    .popup-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .home-btn {
+      display: inline-block;
+      background: #007bff;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .home-btn:hover {
+      color: #fff;
+    }
+
+    .error-text {
+      color: #dc3545;
+      font-size: 0.85rem;
+      margin-top: -20px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .col-lg-12 ul li {
+      cursor: pointer;
+    }
+
+    .col-lg-12 ul li label {
+      cursor: pointer;
+      font-size: 15px;
+      color: #5e6776;
+      margin-left: 5px;
+    }
+
+
+    .col-lg-12 ul li input[type="checkbox"] {
+      margin-bottom: 15px !important;
+      height: 13px !important;
+    }
+
+    form#contact button {
+margin-top: 10px;
+    }
+  </style>
+
+
+
+  <div id="contactnow"></div>
   <div class="contact-page">
     <div class="container">
       <div class="row">
@@ -100,46 +205,235 @@
                 </div>
               </div>
               <div class="col-lg-6 align-self-center">
+
+
                 <form id="contact" action="" method="get">
                   <div class="row">
                     <div class="col-lg-6">
                       <fieldset>
-                        <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
+                        <input type="text" name="name" id="name" placeholder="Name" autocomplete="on">
+                        <small class="error-text" id="error-name"></small>
                       </fieldset>
                     </div>
                     <div class="col-lg-6">
                       <fieldset>
-                        <input type="tel" name="phone" id="phone" placeholder="Phone Number" autocomplete="on" required>
+                        <input type="tel" name="phone" id="phone" placeholder="Phone Number" autocomplete="on">
+                        <small class="error-text" id="error-phone"></small>
                       </fieldset>
-
                     </div>
                     <div class="col-lg-12">
                       <fieldset>
-                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email"
-                          required="">
+                        <input type="text" name="email" id="email" placeholder="Your Email">
+                        <small class="error-text" id="error-email"></small>
                       </fieldset>
                     </div>
                     <div class="col-lg-12">
                       <ul>
-                        <li><input type="checkbox" name="option2" value="aparmtents"><span>Cleaning</span></li>
-                        <li><input type="checkbox" name="option4" value="food"><span>Address Rental</span></li>
-                        <li><input type="checkbox" name="option1" value="AirBnb Rooms"><span>AirBnb Rooms</span></li>
+                        <li>
+                          <input type="checkbox" name="option2" value="cleaning" id="cleaning">
+                          <label for="cleaning">Cleaning</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="option4" value="address-rental" id="address-rental">
+                          <label for="address-rental">Address Rental</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="option1" value="airbnb-rooms" id="airbnb-rooms">
+                          <label for="airbnb-rooms">AirBnb Rooms</label>
+                        </li>
                       </ul>
                     </div>
+
                     <div class="col-lg-12">
                       <fieldset>
-                        <textarea name="message" type="text" class="form-control" id="message" placeholder="Message"
-                          required=""></textarea>
+                        <textarea name="message" class="form-control" id="message" placeholder="Message"></textarea>
+                        <small class="error-text" id="error-message"></small>
                       </fieldset>
                     </div>
                     <div class="col-lg-12">
                       <fieldset>
-                        <button type="submit" id="form-submit" class="main-button "><i class="fa fa-paper-plane"></i>
+                        <button type="submit" id="form-submit" class="main-button"><i class="fa fa-paper-plane"></i>
                           Send Message</button>
                       </fieldset>
                     </div>
+
+                    <!-- Hidden fields -->
+                    <input type="hidden" name="replymail" value="Pending">
+                    <input type="hidden" name="notifmail" value="Received">
+                    <input type="hidden" name="time" id="time">
                   </div>
                 </form>
+
+                <script>
+                  document.getElementById('contact').addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    clearErrors(); // reset old errors
+
+                    const currentDateTime = getCurrentDateTime();
+                    document.getElementById('time').value = currentDateTime;
+
+                    const formData = new FormData(this);
+                    const name = formData.get('name').trim();
+                    const phone = formData.get('phone').trim();
+                    const email = formData.get('email').trim();
+                    const message = formData.get('message').trim();
+
+                    let hasError = false;
+
+                    // Validation checks
+                    if (!name) {
+                      showError("error-name", "Name is required.");
+                      hasError = true;
+                    }
+                    if (!phone) {
+                      showError("error-phone", "Phone number is required.");
+                      hasError = true;
+                    }
+                    if (!email) {
+                      showError("error-email", "Email is required.");
+                      hasError = true;
+                    } else if (!validateEmail(email)) {
+                      showError("error-email", "Please enter a valid email address.");
+                      hasError = true;
+                    }
+
+                    // ✅ Message field is optional, so no "required" check here
+
+                    if (hasError) return; // stop submission if errors exist
+
+                    // collect services
+                    const services = [];
+                    if (formData.get('option2')) services.push('Cleaning');
+                    if (formData.get('option4')) services.push('Address Rental');
+                    if (formData.get('option1')) services.push('AirBnb Rooms');
+
+                    const data = {
+                      name,
+                      phone,
+                      email,
+                      services: services.join(', '),
+                      message, // optional, may be empty
+                      replymail: formData.get('replymail'),
+                      notifmail: formData.get('notifmail'),
+                      time: formData.get('time')
+                    };
+
+                    fetch('https://script.google.com/macros/s/AKfycbwYIQbXwnVh6NyWhduvLAMfuMNEf3h0VFLwFh5b0IQ5kzmtJ_Zx3lVaqT30sakFMlXZ/exec', {
+                      method: 'POST',
+                      body: new URLSearchParams(data)
+                    })
+                      .then(response => response.text())
+                      .then(response => {
+                        showPopup("Your message has been sent successfully!", true);
+                        document.getElementById('contact').reset();
+                      })
+                      .catch(error => {
+                        console.error('Error:', error);
+                        showPopup("There was an error sending your message.", false);
+                      });
+                  });
+
+                  function showError(id, message) {
+                    document.getElementById(id).textContent = message;
+                  }
+
+                  function clearErrors() {
+                    document.querySelectorAll(".error-text").forEach(el => el.textContent = "");
+                  }
+
+                  function validateEmail(email) {
+                    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    return re.test(String(email).toLowerCase());
+                  }
+
+                  function getCurrentDateTime() {
+                    const options = {
+                      weekday: 'long',
+                      year: 'numeric',
+                      month: 'numeric',
+                      day: 'numeric',
+                      hour: 'numeric',
+                      minute: 'numeric',
+                      hour12: true
+                    };
+                    const currentDate = new Date();
+                    return currentDate.toLocaleString('en-US', { timeZone: 'Europe/Helsinki', ...options });
+                  }
+
+                  // Popup control
+                  function showPopup(message, success) {
+                    const popup = document.getElementById('successPopup');
+                    popup.style.display = "flex";
+                    popup.querySelector("p").textContent = message;
+                    popup.querySelector("h3").textContent = success ? "Success!" : "Error";
+                    popup.querySelector("h3").style.color = success ? "#28a745" : "#dc3545";
+                  }
+
+                  document.getElementById("closePopup").onclick = function () {
+                    document.getElementById("successPopup").style.display = "none";
+                  };
+
+                  window.onclick = function (event) {
+                    const popup = document.getElementById("successPopup");
+                    if (event.target === popup) popup.style.display = "none";
+                  };
+                </script>
+
+
+
+
+
+
+
+                <script>
+                  window.addEventListener('DOMContentLoaded', () => {
+                    const hash = window.location.hash;
+                    let message = ''; // Initialize an empty message
+
+                    if (hash.includes('?')) {
+                      // Extract the part after '?'
+                      const queryPart = hash.split('?')[1];
+                      if (queryPart) {
+                        const parts = queryPart.split('+'); // Example: ["cleaning", "first-cleaning-service"]
+
+                        // Services list
+                        const services = ["cleaning", "address-rental", "airbnb-rooms"];
+
+                        // Loop through and check corresponding checkboxes
+                        parts.forEach(part => {
+                          switch (part.toLowerCase()) {
+                            case "cleaning":
+                              document.getElementById('cleaning').checked = true;
+                              break;
+                            case "address-rental":
+                              document.getElementById('address-rental').checked = true;
+                              break;
+                            case "airbnb-rooms":
+                              document.getElementById('airbnb-rooms').checked = true;
+                              break;
+                          }
+                        });
+
+                        // Filter out the service names and form the message
+                        const messageParts = parts.filter(part => !services.includes(part.toLowerCase()));
+
+                        // Check if the service name is provided (e.g., "first-cleaning-service")
+                        const selectedServices = services.filter(service => parts.includes(service.toLowerCase()));
+
+                        if (selectedServices.length > 0) {
+                          const serviceDetails = messageParts.join(" ").replace(/-/g, " "); // Clean up hyphenated words
+                          message = `I am interested in the ${serviceDetails} service & looking forward to proceed with it.`;
+                        }
+
+                        if (message) {
+                          document.getElementById('message').value = message;
+                        }
+                      }
+                    }
+                  });
+                </script>
+
               </div>
             </div>
           </div>
@@ -148,7 +442,7 @@
     </div>
   </div>
 
-   <footer>
+  <footer>
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
@@ -156,7 +450,9 @@
             <div class="logo">
               <img src="assets/images/black-logo.png" alt="Plot Listing">
             </div>
-            <p>Comfort Oy is dedicated to providing excellence in cleaning services, address rentals services, and Airbnb rooms for guests. We offer customized cleaning solutions, high-quality address rental options, and professional
+            <p>Comfort Oy is dedicated to providing excellence in cleaning services, address rentals services, and
+              Airbnb rooms for guests. We offer customized cleaning solutions, high-quality address rental options, and
+              professional
               Airbnb rooms to deliver seamless, stress-free experiences for our clients.</p>
           </div>
         </div>

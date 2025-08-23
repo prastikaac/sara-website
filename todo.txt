@@ -1,0 +1,23 @@
+make class="active" to the respective tab :                   <div class="menu" style="display: flex;">
+                    <div id="cleaning-tab" class="first-thumb">
+                      <div  class="thumb"
+                        style="display: flex; align-items: baseline; margin-left: 50px; width: 270px;">
+                        <span class="icon"><img src="assets/images/search-icon-01.png" alt=""></span>
+                        Cleaning
+                      </div>
+                    </div>
+                    <div id="address-rental-tab" style="margin-left: 30px;">
+                      <div  class="thumb"
+                        style="display: flex; align-items: baseline; margin-left: 50px; width: 270px;">
+                        <span class="icon"><img src="assets/images/search-icon-02.png" alt=""></span>
+                        Address Rental
+                      </div>
+                    </div>
+                    <div id="airbnb-rooms-tab" style="margin-left: 30px;">
+                      <div  class="thumb"
+                        style="display: flex; align-items: baseline; margin-left: 50px; width: 270px;">
+                        <span class="icon"><img src="assets/images/search-icon-03.png" alt=""></span>
+                        AirBnb Rooms
+                      </div>
+                    </div>
+                  </div> by extracting the url 

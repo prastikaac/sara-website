@@ -57,12 +57,13 @@
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
 
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="services.html">Services</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html" class="active">Services</a></li>
               <li><a href="pricing.html">Pricing</a></li>
               <li><a href="contact-us.html">Contact Us</a></li>
               <li>
-                <div class="main-white-button"><a href="#"><i class="fa fa-plus"></i> Book Services & Rentals</a></div>
+                <div class="main-white-button"><a href="https://prastikaac.github.io/sara-website/pricing.html"><i
+                      class="fa fa-plus"></i> Book Services & Rentals</a></div>
               </li>
             </ul>
             <a class='menu-trigger'>
@@ -123,9 +124,39 @@
                     </div>
                   </div>
                 </div>
+
+
+
+                <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+                    const hash = window.location.hash; // e.g. "#address-rental"
+
+                    // Remove active class from all tabs and all content sections
+                    document.querySelectorAll(".menu > div, .cleaning, .address-rental, .airbnb-rooms")
+                      .forEach(el => el.classList.remove("active"));
+
+                    if (hash) {
+                      // Map hash to tab IDs and content classes
+                      const map = {
+                        "#cleaning": { tab: "cleaning-tab", content: ".cleaning" },
+                        "#address-rental": { tab: "address-rental-tab", content: ".address-rental" },
+                        "#airbnb-rooms": { tab: "airbnb-rooms-tab", content: ".airbnb-rooms" }
+                      };
+
+                      const target = map[hash];
+                      if (target) {
+                        // Add active to the tab
+                        document.getElementById(target.tab).classList.add("active");
+                        // Add active to the content block
+                        document.querySelector(target.content)?.classList.add("active");
+                      }
+                    }
+                  });
+                </script>
+
                 <div class="col-lg-12">
                   <ul class="nacc">
-                    <li class="active">
+                    <li class="cleaning">
                       <div>
                         <div class="thumb">
                           <div class="row">
@@ -257,7 +288,7 @@
                         </div>
                       </div>
                     </li>
-                    <li>
+                    <li class="address-rental">
                       <div>
                         <div class="thumb">
                           <div class="row">
@@ -386,7 +417,7 @@
                         </div>
                       </div>
                     </li>
-                    <li>
+                    <li class="airbnb-rooms">
                       <div>
                         <div class="thumb">
                           <div class="row">
