@@ -719,15 +719,14 @@ header
   max-width: 30px !important;
 }
 
-#address-rental-tab,
-#airbnb-rooms-tab {
+.mg30 {
   margin-left: 30px;
 }
 
-  .pc-minu {
-    margin-left: 50px;
-    width: 270px;
-  }
+.pc-minu {
+  margin-left: 50px;
+  width: 270px;
+}
 
 
 
@@ -806,9 +805,13 @@ header
     margin-top: -50px;
   }
 
-  .services-menu{
-    width: 32.5% !important;
+
+  .services-menu {
     height: 70px !important;
+  }
+
+  .services-tab {
+    width: 32.5% !important;
   }
 
   .pricing-menu {
