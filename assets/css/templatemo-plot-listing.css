@@ -1603,7 +1603,11 @@ Category Post
 }
 
 .category-post .icon img {
-  max-width: 27px;
+  max-width: 30px;
+}
+
+.iconimg {
+  max-width: 30px !important;
 }
 
 .category-post .naccs .menu div.first-thumb {
