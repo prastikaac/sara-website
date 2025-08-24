@@ -706,13 +706,75 @@ header
   }
 }
 
+
+.services-cleaning {
+    margin-left: -20px !important;
+  }
+
+  .main-icon {
+    margin-left: 20px;
+  }
+
 @media (max-width: 767px) {
   .background-header .main-nav .nav {
-    margin-top: 80px !important;
+    margin-top: 5px !important;
   }
 
   .header-area .main-nav .logo {
     color: #1e1e1e;
+  }
+
+
+  .contact-container {
+    margin-top: -50px;
+  }
+
+  .menu div {
+    width: 32.5% !important;
+    height: 70px !important;
+  }
+
+  .menu div h4 {
+  color: #fff !important;
+  }
+
+  .menu div h4 {
+    left: 27px !important;
+  }
+
+
+  .title-text {
+        line-height: 28px !important;
+  }
+
+    .main-icon {
+    margin-left: -40px !important;
+  }
+
+
+  .main-icon {
+    display: inline-block !important;
+  }
+
+  .services-cleaning {
+    margin-left: -12px !important;
+  }
+
+  .tab-icons {
+    display: none !important;
+  }
+
+  .footer-text {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  footer .contact-us p {
+    margin-bottom: 10px !important;
+  }
+
+  .row>* {
+    max-width: 110%;
   }
 
   .header-area.header-sticky .nav li a:hover,
@@ -769,7 +831,7 @@ header
   }
 
   .header-area.header-sticky .nav {
-    margin-top: 100px;
+    margin-top: 15px;
   }
 
   .header-area .main-nav .nav li {
@@ -2220,10 +2282,24 @@ responsive
     color: transparent;
   }
 
-  .header-area .main-nav a.logo {
-    background-image: url(../images/black-logo.png);
-    float: left;
+
+  .phone-header {
+    width: 110%;
+    margin-left: -22px;
   }
+
+
+  .phone-header-row {
+    max-width: 110%;
+  }
+
+
+  .header-area .header-txt {
+    color: #333;
+    left: 10%;
+    /* Set text color to white */
+  }
+
 
   .header-area .logo {
     margin-left: 0px;
