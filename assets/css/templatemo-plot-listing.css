@@ -708,12 +708,28 @@ header
 
 
 .services-cleaning {
-    margin-left: -20px !important;
+  margin-left: -20px !important;
+}
+
+.main-icon {
+  margin-left: 20px;
+}
+
+.indexiconimg {
+  max-width: 30px !important;
+}
+
+#address-rental-tab,
+#airbnb-rooms-tab {
+  margin-left: 30px;
+}
+
+  .pc-minu {
+    margin-left: 50px;
+    width: 270px;
   }
 
-  .main-icon {
-    margin-left: 20px;
-  }
+
 
 @media (max-width: 767px) {
   .background-header .main-nav .nav {
@@ -724,18 +740,83 @@ header
     color: #1e1e1e;
   }
 
+  .popular-categories .icon {
+    margin-left: 20% !important;
+    transform: translateX(0px) !important;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .popular-categories .icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .index-row {
+    height: 1030px !important;
+  }
+
+  #address-rental-tab,
+  #airbnb-rooms-tab {
+    margin-left: 0px;
+    margin-top: -20px;
+  }
+
+  .indexiconimg {
+    max-width: 25px !important;
+  }
+
+  .menu-text {
+    color: #fff !important;
+  }
+
+  .index-menu {
+    height: 100px !important;
+    line-height: 100px !important;
+
+  }
+
+  .mobileview {
+    margin-top: 260px;
+  }
+
+  .pricing-menu {
+    display: block !important;
+  }
+
+  .pc-minu {
+    margin-left: 50px !important;
+  }
+
+  .golo-icon {
+    line-height: 50px !important;
+    width: 50px !important;
+    height: 50px !important
+  }
+
+  .main-banner ul.categories li {
+    margin-right: 15px;
+  }
+
+  .right-inner-image {
+    width: 100% !important;
+  }
 
   .contact-container {
     margin-top: -50px;
   }
 
-  .menu div {
+  .services-menu{
     width: 32.5% !important;
     height: 70px !important;
   }
 
+  .pricing-menu {
+    height: 70px !important;
+  }
+
   .menu div h4 {
-  color: #fff !important;
+    color: #fff !important;
   }
 
   .menu div h4 {
@@ -744,10 +825,10 @@ header
 
 
   .title-text {
-        line-height: 28px !important;
+    line-height: 28px !important;
   }
 
-    .main-icon {
+  .main-icon {
     margin-left: -40px !important;
   }
 
@@ -1289,8 +1370,10 @@ Recent Listing
 
 .recent-listing .item .right-content ul.info li img {
   max-width: 30px;
-  margin-right: 15px;
+  margin-right: 10px;
   display: inline;
+  margin-top: -5px;
+
 }
 
 .recent-listing .item .right-content .main-white-button {
@@ -1968,10 +2051,18 @@ Listing Page
   line-height: 30px;
 }
 
+
+
+
+.index-row {
+  height: 450px;
+}
+
 .listing-page .item .right-content span.info img {
   max-width: 30px;
-  margin-right: 15px;
+  margin-right: 10px;
   display: inline;
+  margin-top: -5px;
 }
 
 .listing-page .owl-dots {

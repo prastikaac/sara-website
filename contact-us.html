@@ -264,121 +264,123 @@ margin-top: 10px;
                   </div>
                 </form>
 
-                <script>
-                  document.getElementById('contact').addEventListener('submit', function (event) {
-                    event.preventDefault();
+<script>
+  document.getElementById('contact').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-                    clearErrors(); // reset old errors
+    clearErrors(); // reset old errors
 
-                    const currentDateTime = getCurrentDateTime();
-                    document.getElementById('time').value = currentDateTime;
+    const currentDateTime = getCurrentDateTime();
+    document.getElementById('time').value = currentDateTime;
 
-                    const formData = new FormData(this);
-                    const name = formData.get('name').trim();
-                    const phone = formData.get('phone').trim();
-                    const email = formData.get('email').trim();
-                    const message = formData.get('message').trim();
+    const formData = new FormData(this);
+    const name = formData.get('name').trim();
+    const phone = formData.get('phone').trim();
+    const email = formData.get('email').trim();
+    const message = formData.get('message').trim();
 
-                    let hasError = false;
+    let hasError = false;
 
-                    // Validation checks
-                    if (!name) {
-                      showError("error-name", "Name is required.");
-                      hasError = true;
-                    }
-                    if (!phone) {
-                      showError("error-phone", "Phone number is required.");
-                      hasError = true;
-                    }
-                    if (!email) {
-                      showError("error-email", "Email is required.");
-                      hasError = true;
-                    } else if (!validateEmail(email)) {
-                      showError("error-email", "Please enter a valid email address.");
-                      hasError = true;
-                    }
+    // Validation checks
+    if (!name) {
+      showError("error-name", "Name is required.");
+      hasError = true;
+    }
+    if (!phone) {
+      showError("error-phone", "Phone number is required.");
+      hasError = true;
+    }
+    if (!email) {
+      showError("error-email", "Email is required.");
+      hasError = true;
+    } else if (!validateEmail(email)) {
+      showError("error-email", "Please enter a valid email address.");
+      hasError = true;
+    }
 
-                    // ✅ Message field is optional, so no "required" check here
+    if (hasError) return; // stop submission if errors exist
 
-                    if (hasError) return; // stop submission if errors exist
+    // collect services
+    const services = [];
+    if (formData.get('option2')) services.push('Cleaning');
+    if (formData.get('option4')) services.push('Address Rental');
+    if (formData.get('option1')) services.push('AirBnb Rooms');
 
-                    // collect services
-                    const services = [];
-                    if (formData.get('option2')) services.push('Cleaning');
-                    if (formData.get('option4')) services.push('Address Rental');
-                    if (formData.get('option1')) services.push('AirBnb Rooms');
+    const data = {
+      name,
+      phone,
+      email,
+      services: services.join(', '),
+      message,
+      replymail: formData.get('replymail'),
+      notifmail: formData.get('notifmail'),
+      time: formData.get('time')
+    };
 
-                    const data = {
-                      name,
-                      phone,
-                      email,
-                      services: services.join(', '),
-                      message, // optional, may be empty
-                      replymail: formData.get('replymail'),
-                      notifmail: formData.get('notifmail'),
-                      time: formData.get('time')
-                    };
+    // ✅ Show popup after 1 second, before waiting for backend response
+    setTimeout(() => {
+      showPopup("Your message has been sent successfully!", true);
+      document.getElementById('contact').reset();
+    }, 1000);
 
-                    fetch('https://script.google.com/macros/s/AKfycbwYIQbXwnVh6NyWhduvLAMfuMNEf3h0VFLwFh5b0IQ5kzmtJ_Zx3lVaqT30sakFMlXZ/exec', {
-                      method: 'POST',
-                      body: new URLSearchParams(data)
-                    })
-                      .then(response => response.text())
-                      .then(response => {
-                        showPopup("Your message has been sent successfully!", true);
-                        document.getElementById('contact').reset();
-                      })
-                      .catch(error => {
-                        console.error('Error:', error);
-                        showPopup("There was an error sending your message.", false);
-                      });
-                  });
+    // ✅ Send data in background
+    fetch('https://script.google.com/macros/s/AKfycbwYIQbXwnVh6NyWhduvLAMfuMNEf3h0VFLwFh5b0IQ5kzmtJ_Zx3lVaqT30sakFMlXZ/exec', {
+      method: 'POST',
+      body: new URLSearchParams(data)
+    })
+      .catch(error => {
+        console.error('Error:', error);
+        // Optionally update popup if needed
+        showPopup("There was an error sending your message.", false);
+      });
+  });
 
-                  function showError(id, message) {
-                    document.getElementById(id).textContent = message;
-                  }
+  function showError(id, message) {
+    document.getElementById(id).textContent = message;
+  }
 
-                  function clearErrors() {
-                    document.querySelectorAll(".error-text").forEach(el => el.textContent = "");
-                  }
+  function clearErrors() {
+    document.querySelectorAll(".error-text").forEach(el => el.textContent = "");
+  }
 
-                  function validateEmail(email) {
-                    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                    return re.test(String(email).toLowerCase());
-                  }
+  function validateEmail(email) {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(String(email).toLowerCase());
+  }
 
-                  function getCurrentDateTime() {
-                    const options = {
-                      weekday: 'long',
-                      year: 'numeric',
-                      month: 'numeric',
-                      day: 'numeric',
-                      hour: 'numeric',
-                      minute: 'numeric',
-                      hour12: true
-                    };
-                    const currentDate = new Date();
-                    return currentDate.toLocaleString('en-US', { timeZone: 'Europe/Helsinki', ...options });
-                  }
+  function getCurrentDateTime() {
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true
+    };
+    const currentDate = new Date();
+    return currentDate.toLocaleString('en-US', { timeZone: 'Europe/Helsinki', ...options });
+  }
 
-                  // Popup control
-                  function showPopup(message, success) {
-                    const popup = document.getElementById('successPopup');
-                    popup.style.display = "flex";
-                    popup.querySelector("p").textContent = message;
-                    popup.querySelector("h3").textContent = success ? "Success!" : "Error";
-                    popup.querySelector("h3").style.color = success ? "#28a745" : "#dc3545";
-                  }
+  // Popup control
+  function showPopup(message, success) {
+    const popup = document.getElementById('successPopup');
+    popup.style.display = "flex";
+    popup.querySelector("p").textContent = message;
+    popup.querySelector("h3").textContent = success ? "Success!" : "Error";
+    popup.querySelector("h3").style.color = success ? "#28a745" : "#dc3545";
+  }
 
-                  document.getElementById("closePopup").onclick = function () {
-                    document.getElementById("successPopup").style.display = "none";
-                  };
+  document.getElementById("closePopup").onclick = function () {
+    document.getElementById("successPopup").style.display = "none";
+  };
 
-                  window.onclick = function (event) {
-                    const popup = document.getElementById("successPopup");
-                    if (event.target === popup) popup.style.display = "none";
-                  };
-                </script>
+  window.onclick = function (event) {
+    const popup = document.getElementById("successPopup");
+    if (event.target === popup) popup.style.display = "none";
+  };
+</script>
+
 
 
 
