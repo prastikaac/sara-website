@@ -579,7 +579,7 @@ header
   -o-transition: all 0.4s;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  background-color: #1e1e1e;
+  background-color: #fff;
   display: block;
   position: absolute;
   width: 30px;
@@ -599,7 +599,7 @@ header
   -o-transition: all 0.4s;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
-  background-color: #1e1e1e;
+ background-color: #fff;
   display: block;
   position: absolute;
   width: 30px;
@@ -754,8 +754,30 @@ header
   }
 
   .main-banner ul.categories {
-    margin-top: 10px !important;
+    margin-top: 40px !important;
   }
+
+  .header-area {
+    background-color: transparent !important;
+  }
+
+  .header-area .header-txt {
+    color: white !important;
+  }
+
+
+
+  .background-header {
+    background-color: white !important;
+  }
+
+  .background-header .header-txt {
+    color: #333 !important;
+  }
+
+ 
+  
+
 
 
   .top-large-txt {
