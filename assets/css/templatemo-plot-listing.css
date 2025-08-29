@@ -599,7 +599,7 @@ header
   -o-transition: all 0.4s;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
- background-color: #fff;
+  background-color: #fff;
   display: block;
   position: absolute;
   width: 30px;
@@ -775,8 +775,17 @@ header
     color: #333 !important;
   }
 
- 
+
   
+  .clicked-header {
+    background-color: white !important;
+  }
+
+  .clicked-header .header-txt {
+    color: #333 !important;
+  }
+
+
 
 
 
