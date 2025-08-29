@@ -81,60 +81,49 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="top-text header-text">
-            <h6>Over 500+ Active Customers</h6>
-            <h2>Find Nearby Cleaning &amp; Services</h2>
+            <h6 class="top-small-txt" style="margin-top: -50px;">with Over 500+ Active Customers</h6>
+            <h2 class="top-large-txt" style="line-height: 170%;"> ONE OF THE BEST CLEANING & RENTAL SERVICES IN FINLAND
+              & TRUSTED BY MANY FOR
+            </h2>
+
+
+
+            <h2 class="top-typing-txt" style="margin-top: -30px;"> <span class="animated-text"></span> </h2>
           </div>
         </div>
-        <div class="col-lg-12">
-          <form id="search-form" name="gs" method="submit" role="search" action="#">
-            <div class="row">
-              <div class="col-lg-3 align-self-center">
-                <fieldset>
-                  <select name="area" class="form-select" aria-label="Area" id="chooseCategory"
-                    onchange="this.form.click()">
-                    <option selected>All Areas</option>
-                    <option value="New Village">Helsinki</option>
-                    <option value="Old Town">Espoo</option>
-                    <option value="Modern City">Vantaa</option>
-                  </select>
-                </fieldset>
-              </div>
-              <div class="col-lg-3 align-self-center">
-                <fieldset>
-                  <input type="address" name="address" class="searchText" placeholder="Enter a location"
-                    autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-3 align-self-center">
-                <fieldset>
-                  <select name="price" class="form-select" aria-label="Default select example" id="chooseCategory"
-                    onchange="this.form.click()">
-                    <option selected>Price Range</option>
-                    <option value="10€ - 25€">10€ - 25€</option>
-                    <option value="25€ - 50€">25€ - 50€</option>
-                    <option value="50€ - 100€">50€ - 100€</option>
-                    <option value="$1000+">100€ or more</option>
-                  </select>
-                </fieldset>
-              </div>
-              <div class="col-lg-3">
-                <fieldset>
-                  <button class="main-button"><i class="fa fa-search"></i> Search Now</button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="col-lg-10 offset-lg-1">
+        <!-- Add this in your HTML head or before </body> -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+        <style>
+          .animated-text {
+            min-width: 280px;
+            color: #ffffff;
+          }
+        </style>
+
+
+
+        <script>
+          // typing text animation script
+          var typed = new Typed(".animated-text", {
+            strings: ["CLEANING SERVICES", "ADDRESS RENTAL", "AIRBNB ROOMS"],
+            typeSpeed: 60,    // faster typing
+            backSpeed: 40,    // faster backspacing
+            backDelay: 800,   // short pause before erasing
+            loop: true
+          });
+        </script>
+
+        <div style="margin-top: -30px; " class="col-lg-10 offset-lg-1">
           <ul class="categories">
 
-            <li><a href="#cleaning-content"><span class="icon"><img src="assets/images/search-icon-01.png"
+            <li class="first-one"><a href="#cleaning-content"><span class="icon"><img src="assets/images/search-icon-01.png"
                     alt="Home"></span>
                 Cleaning Services</a></li>
             <li><a href="#address-rental-content"><span class="icon"><img src="assets/images/search-icon-02.png"
                     alt="Vehicle"></span>
-                Adress Rental </a></li>
-            <li><a href="#airbnb-rooms-content"><span class="icon"><img src="assets/images/search-icon-03.png"
+                Address Rental </a></li>
+            <li class="last-one"><a href="#airbnb-rooms-content"><span class="icon"><img src="assets/images/search-icon-03.png"
                     alt="Vehicle"></span>
                 AirBnb Rooms </a></li>
           </ul>
@@ -336,7 +325,8 @@
                 <div class="col-lg-12">
                   <div class="listing-item">
                     <div class="left-image">
-                      <a href="contact-us.html#contactnow?cleaning+first-cleaning-service"><img src="assets/images/listing-01.jpg" alt=""></a>
+                      <a href="contact-us.html#contactnow?cleaning+first-cleaning-service"><img
+                          src="assets/images/listing-01.jpg" alt=""></a>
                     </div>
                     <div class="right-content align-self-center">
                       <a href="contact-us.html#contactnow?cleaning+first-cleaning-service">
@@ -503,7 +493,8 @@
                 <div class="col-lg-12">
                   <div class="listing-item">
                     <div class="left-image">
-                      <a href="contact-us.html#contactnow?address-rental+monthly-address-rental"><img src="assets/images/monthly-address-rental.jpg" alt=""></a>
+                      <a href="contact-us.html#contactnow?address-rental+monthly-address-rental"><img
+                          src="assets/images/monthly-address-rental.jpg" alt=""></a>
                     </div>
                     <div class="right-content align-self-center">
                       <a href="contact-us.html#contactnow?address-rental+monthly-address-rental">

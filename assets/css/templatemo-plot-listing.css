@@ -729,6 +729,14 @@ header
 }
 
 
+.typing-text {
+  color: #fff;
+  font-size: 45px;
+  font-weight: 800;
+  margin-top: 15px;
+  margin-bottom: 45px;
+}
+
 
 @media (max-width: 767px) {
   .background-header .main-nav .nav {
@@ -738,6 +746,35 @@ header
   .header-area .main-nav .logo {
     color: #1e1e1e;
   }
+
+  .top-small-txt {
+    margin-top: -115px !important;
+    margin-left: -10px;
+  }
+
+  .top-large-txt {
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 5px;
+    font-size: 30px !important;
+  }
+
+  .top-typing-txt {
+    text-align: left;
+      margin-left: 15px;
+    margin-right: 5px;
+    font-size:  27px !important;
+  }
+
+  .first-one {
+    margin-left: 25px;
+  }
+
+   .last-one {
+    margin-right:  30px !important;
+  }
+
+
 
   .popular-categories .icon {
     margin-left: 20% !important;
@@ -794,7 +831,7 @@ header
   }
 
   .main-banner ul.categories li {
-    margin-right: 15px;
+    margin-right:  45px;
   }
 
   .right-inner-image {
@@ -1018,7 +1055,6 @@ Banner Style
   color: #fff;
   font-size: 45px;
   font-weight: 800;
-  text-transform: capitalize;
   margin-top: 15px;
   margin-bottom: 45px;
 }
@@ -1056,7 +1092,7 @@ Banner Style
 }
 
 .main-banner ul.categories li a:hover .icon {
-  background-color: #2b2d42;
+  background-color: #cdcdce;
 }
 
 .main-banner ul.categories li .icon img {

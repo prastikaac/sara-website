@@ -1,0 +1,59 @@
+<style>
+    .animated-text {
+        font-size: 34px;
+        font-weight: 600;
+        min-width: 280px;
+    }
+
+    .animated-text span {
+        position: relative;
+    }
+
+    .animated-text span::before {
+        content: "Cleaning Services";
+        color: #ff7f50;
+        animation: words 12s infinite;
+    }
+
+    .animated-text span::after {
+        content: "";
+        position: absolute;
+        width: calc(100% + 8px);
+        height: 100%;
+        background-color: #2f3542;
+        border-left: 2px solid #ff7f50;
+        right: -8px;
+        animation: cursor .8s infinite, typing 12s steps(14) infinite;
+    }
+
+    @keyframes cursor {
+        to {
+            border-left: 2px solid #ff7f5000;
+        }
+    }
+
+    @keyframes words {
+        0%, 33% {
+            content: "Cleaning Services";
+        }
+        34%, 66% {
+            content: "Adress Rental";
+        }
+        67%, 100% {
+            content: "AirBnb Rooms";
+        }
+    }
+
+    @keyframes typing {
+        10%, 15%, 40%, 45%, 70%, 75%, 95% {
+            width: 0;
+        }
+        5%, 20%, 35%, 50%, 65%, 80%, 90% {
+            width: calc(100% + 8px);
+        }
+    }
+</style>
+
+<div class="animated-text">
+    We provide <span></span>
+</div>
