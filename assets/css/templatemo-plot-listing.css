@@ -748,9 +748,15 @@ header
   }
 
   .top-small-txt {
-    margin-top: -115px !important;
-    margin-left: -10px;
+    margin-top: -105px !important;
+    text-align: left;
+    margin-left: 15px;
   }
+
+  .main-banner ul.categories {
+    margin-top: 10px !important;
+  }
+
 
   .top-large-txt {
     text-align: left;
@@ -761,17 +767,17 @@ header
 
   .top-typing-txt {
     text-align: left;
-      margin-left: 15px;
+    margin-left: 15px;
     margin-right: 5px;
-    font-size:  27px !important;
+    font-size: 27px !important;
   }
 
   .first-one {
     margin-left: 25px;
   }
 
-   .last-one {
-    margin-right:  30px !important;
+  .last-one {
+    margin-right: 30px !important;
   }
 
 
@@ -831,7 +837,7 @@ header
   }
 
   .main-banner ul.categories li {
-    margin-right:  45px;
+    margin-right: 45px;
   }
 
   .right-inner-image {
