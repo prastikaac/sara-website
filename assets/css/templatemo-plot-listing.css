@@ -436,7 +436,7 @@ header
 
 .background-header .main-nav .nav li:last-child .main-white-button a {
   background-color: #8d99af;
-  color: #fff !important;
+  color: #fff;
 }
 
 .background-header .main-nav .nav li:last-child .main-white-button a i {
@@ -446,7 +446,7 @@ header
 
 .header-area .main-nav .nav li:last-child a:hover,
 .header-area .main-nav .nav li:last-child a.active {
-  color: #fff !important;
+  color: #2a2a2a !important;
 }
 
 .header-area .main-nav .nav li a {
@@ -478,7 +478,7 @@ header
 
 .header-area .main-nav .nav li:last-child a:hover,
 .background-header .main-nav .nav li:last-child a:hover {
-  background-color: #8d99af;
+  background-color: #fff;
 }
 
 .header-area .main-nav .nav li.has-sub {
@@ -776,7 +776,7 @@ header
   }
 
 
-  
+
   .clicked-header {
     background-color: white !important;
   }
