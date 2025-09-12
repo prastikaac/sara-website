@@ -62,9 +62,11 @@
               <li><a href="pricing.html#cleaning">Pricing</a></li>
               <li><a href="#contactnow" class="active">Contact Us</a></li>
               <li>
-                <div class="main-white-button"> <div>
+                <div class="main-white-button">
+                  <div>
                     <div id="gt-mordadam-43217984"></div>
-                  </div></div>
+                  </div>
+                </div>
               </li>
             </ul>
             <a class='menu-trigger'>
@@ -188,7 +190,7 @@
     }
 
     form#contact button {
-margin-top: 10px;
+      margin-top: 10px;
     }
   </style>
 
@@ -266,122 +268,122 @@ margin-top: 10px;
                   </div>
                 </form>
 
-<script>
-  document.getElementById('contact').addEventListener('submit', function (event) {
-    event.preventDefault();
+                <script>
+                  document.getElementById('contact').addEventListener('submit', function (event) {
+                    event.preventDefault();
 
-    clearErrors(); // reset old errors
+                    clearErrors(); // reset old errors
 
-    const currentDateTime = getCurrentDateTime();
-    document.getElementById('time').value = currentDateTime;
+                    const currentDateTime = getCurrentDateTime();
+                    document.getElementById('time').value = currentDateTime;
 
-    const formData = new FormData(this);
-    const name = formData.get('name').trim();
-    const phone = formData.get('phone').trim();
-    const email = formData.get('email').trim();
-    const message = formData.get('message').trim();
+                    const formData = new FormData(this);
+                    const name = formData.get('name').trim();
+                    const phone = formData.get('phone').trim();
+                    const email = formData.get('email').trim();
+                    const message = formData.get('message').trim();
 
-    let hasError = false;
+                    let hasError = false;
 
-    // Validation checks
-    if (!name) {
-      showError("error-name", "Name is required.");
-      hasError = true;
-    }
-    if (!phone) {
-      showError("error-phone", "Phone number is required.");
-      hasError = true;
-    }
-    if (!email) {
-      showError("error-email", "Email is required.");
-      hasError = true;
-    } else if (!validateEmail(email)) {
-      showError("error-email", "Please enter a valid email address.");
-      hasError = true;
-    }
+                    // Validation checks
+                    if (!name) {
+                      showError("error-name", "Name is required.");
+                      hasError = true;
+                    }
+                    if (!phone) {
+                      showError("error-phone", "Phone number is required.");
+                      hasError = true;
+                    }
+                    if (!email) {
+                      showError("error-email", "Email is required.");
+                      hasError = true;
+                    } else if (!validateEmail(email)) {
+                      showError("error-email", "Please enter a valid email address.");
+                      hasError = true;
+                    }
 
-    if (hasError) return; // stop submission if errors exist
+                    if (hasError) return; // stop submission if errors exist
 
-    // collect services
-    const services = [];
-    if (formData.get('option2')) services.push('Cleaning');
-    if (formData.get('option4')) services.push('Address Rental');
-    if (formData.get('option1')) services.push('AirBnb Rooms');
+                    // collect services
+                    const services = [];
+                    if (formData.get('option2')) services.push('Cleaning');
+                    if (formData.get('option4')) services.push('Address Rental');
+                    if (formData.get('option1')) services.push('AirBnb Rooms');
 
-    const data = {
-      name,
-      phone,
-      email,
-      services: services.join(', '),
-      message,
-      replymail: formData.get('replymail'),
-      notifmail: formData.get('notifmail'),
-      time: formData.get('time')
-    };
+                    const data = {
+                      name,
+                      phone,
+                      email,
+                      services: services.join(', '),
+                      message,
+                      replymail: formData.get('replymail'),
+                      notifmail: formData.get('notifmail'),
+                      time: formData.get('time')
+                    };
 
-    // ✅ Show popup after 1 second, before waiting for backend response
-    setTimeout(() => {
-      showPopup("Your message has been sent successfully!", true);
-      document.getElementById('contact').reset();
-    }, 1000);
+                    // ✅ Show popup after 1 second, before waiting for backend response
+                    setTimeout(() => {
+                      showPopup("Your message has been sent successfully!", true);
+                      document.getElementById('contact').reset();
+                    }, 1000);
 
-    // ✅ Send data in background
-    fetch('https://script.google.com/macros/s/AKfycbwYIQbXwnVh6NyWhduvLAMfuMNEf3h0VFLwFh5b0IQ5kzmtJ_Zx3lVaqT30sakFMlXZ/exec', {
-      method: 'POST',
-      body: new URLSearchParams(data)
-    })
-      .catch(error => {
-        console.error('Error:', error);
-        // Optionally update popup if needed
-        showPopup("There was an error sending your message.", false);
-      });
-  });
+                    // ✅ Send data in background
+                    fetch('https://script.google.com/macros/s/AKfycbwYIQbXwnVh6NyWhduvLAMfuMNEf3h0VFLwFh5b0IQ5kzmtJ_Zx3lVaqT30sakFMlXZ/exec', {
+                      method: 'POST',
+                      body: new URLSearchParams(data)
+                    })
+                      .catch(error => {
+                        console.error('Error:', error);
+                        // Optionally update popup if needed
+                        showPopup("There was an error sending your message.", false);
+                      });
+                  });
 
-  function showError(id, message) {
-    document.getElementById(id).textContent = message;
-  }
+                  function showError(id, message) {
+                    document.getElementById(id).textContent = message;
+                  }
 
-  function clearErrors() {
-    document.querySelectorAll(".error-text").forEach(el => el.textContent = "");
-  }
+                  function clearErrors() {
+                    document.querySelectorAll(".error-text").forEach(el => el.textContent = "");
+                  }
 
-  function validateEmail(email) {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return re.test(String(email).toLowerCase());
-  }
+                  function validateEmail(email) {
+                    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    return re.test(String(email).toLowerCase());
+                  }
 
-  function getCurrentDateTime() {
-    const options = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'numeric',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: true
-    };
-    const currentDate = new Date();
-    return currentDate.toLocaleString('en-US', { timeZone: 'Europe/Helsinki', ...options });
-  }
+                  function getCurrentDateTime() {
+                    const options = {
+                      weekday: 'long',
+                      year: 'numeric',
+                      month: 'numeric',
+                      day: 'numeric',
+                      hour: 'numeric',
+                      minute: 'numeric',
+                      hour12: true
+                    };
+                    const currentDate = new Date();
+                    return currentDate.toLocaleString('en-US', { timeZone: 'Europe/Helsinki', ...options });
+                  }
 
-  // Popup control
-  function showPopup(message, success) {
-    const popup = document.getElementById('successPopup');
-    popup.style.display = "flex";
-    popup.querySelector("p").textContent = message;
-    popup.querySelector("h3").textContent = success ? "Success!" : "Error";
-    popup.querySelector("h3").style.color = success ? "#28a745" : "#dc3545";
-  }
+                  // Popup control
+                  function showPopup(message, success) {
+                    const popup = document.getElementById('successPopup');
+                    popup.style.display = "flex";
+                    popup.querySelector("p").textContent = message;
+                    popup.querySelector("h3").textContent = success ? "Success!" : "Error";
+                    popup.querySelector("h3").style.color = success ? "#28a745" : "#dc3545";
+                  }
 
-  document.getElementById("closePopup").onclick = function () {
-    document.getElementById("successPopup").style.display = "none";
-  };
+                  document.getElementById("closePopup").onclick = function () {
+                    document.getElementById("successPopup").style.display = "none";
+                  };
 
-  window.onclick = function (event) {
-    const popup = document.getElementById("successPopup");
-    if (event.target === popup) popup.style.display = "none";
-  };
-</script>
+                  window.onclick = function (event) {
+                    const popup = document.getElementById("successPopup");
+                    if (event.target === popup) popup.style.display = "none";
+                  };
+                </script>
 
 
 
@@ -399,7 +401,7 @@ margin-top: 10px;
                       // Extract the part after '?'
                       const queryPart = hash.split('?')[1];
                       if (queryPart) {
-                        const parts = queryPart.split('+'); // Example: ["cleaning", "first-cleaning-service"]
+                        const parts = queryPart.split('+'); // e.g. ["airbnb-rooms", "(location)", "(roomname)"]
 
                         // Services list
                         const services = ["cleaning", "address-rental", "airbnb-rooms"];
@@ -419,14 +421,18 @@ margin-top: 10px;
                           }
                         });
 
-                        // Filter out the service names and form the message
+                        // Filter out the service names
                         const messageParts = parts.filter(part => !services.includes(part.toLowerCase()));
 
-                        // Check if the service name is provided (e.g., "first-cleaning-service")
+                        // Check if the service name is provided
                         const selectedServices = services.filter(service => parts.includes(service.toLowerCase()));
 
-                        if (selectedServices.length > 0) {
-                          const serviceDetails = messageParts.join(" ").replace(/-/g, " "); // Clean up hyphenated words
+                        if (selectedServices.includes("airbnb-rooms") && messageParts.length >= 2) {
+                          const location = messageParts[0].replace(/-/g, " ");
+                          const roomname = messageParts[1].replace(/-/g, " ");
+                          message = `I am interested in booking the ${roomname} at ${location} & looking forward to proceed with it.`;
+                        } else if (selectedServices.length > 0) {
+                          const serviceDetails = messageParts.join(" ").replace(/-/g, " ");
                           message = `I am interested in the ${serviceDetails} service & looking forward to proceed with it.`;
                         }
 
@@ -437,6 +443,7 @@ margin-top: 10px;
                     }
                   });
                 </script>
+
 
               </div>
             </div>
@@ -454,7 +461,8 @@ margin-top: 10px;
             <div class="logo">
               <img src="assets/images/black-logo.png" alt="Plot Listing">
             </div>
-            <p class="footer-text">Comfort Oy is dedicated to providing excellence in cleaning services, address rentals services, and
+            <p class="footer-text">Comfort Keys Oy is dedicated to providing excellence in cleaning services, address rentals
+              services, and
               Airbnb rooms for guests. We offer customized cleaning solutions, high-quality address rental options, and
               professional
               Airbnb rooms to deliver seamless, stress-free experiences for our clients.</p>
@@ -513,7 +521,7 @@ margin-top: 10px;
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/custom.js"></script>
-     <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
   <script src="js/translator.js"></script>
   <script src="/js/gt.min.js" data-gt-widget-id="43217984"></script>
