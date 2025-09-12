@@ -1,53 +1,49 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APEX Limited Edition Drop</title>
-  <link rel="stylesheet" href="assets/css/offer.css">
+  <title>Contact Us</title>
+  <style>
+    html {
+      scroll-behavior: smooth; /* optional for smooth scrolling */
+    }
+    section {
+      height: 500px;
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+  </style>
 </head>
-
 <body>
-  <!-- Popup Overlay -->
-  <div class="popup-overlay" id="popupOverlay">
-    <div class="offer-container">
-      <span class="close-btn" id="closePopup">&times;</span>
-      <div class="product-teaser">
-        <h1 class="product-name">Get 50% off</h1>
-        <p class="product-description">
-          Exclusive Business Address Rental Deal: Get your official business address in Helsinki — first 3 months at 50%
-          off!
-        </p>
 
-        <p style="font-weight: 700; font-size: 20px; margin-bottom: 13px;">Offer Ends in</p>
-        <div class="countdown-wrapper">
-          <div class="countdown-box">
-            <div class="countdown-number" id="days">00</div>
-            <div class="countdown-label">Days</div>
-          </div>
-          <div class="countdown-box">
-            <div class="countdown-number" id="hours">00</div>
-            <div class="countdown-label">Hours</div>
-          </div>
-          <div class="countdown-box">
-            <div class="countdown-number" id="minutes">00</div>
-            <div class="countdown-label">Minutes</div>
-          </div>
-          <div class="countdown-box">
-            <div class="countdown-number" id="seconds">00</div>
-            <div class="countdown-label">Seconds</div>
-          </div>
-        </div>
+<section id="home">
+  <h2>Home Section</h2>
+</section>
 
-        <div class="cta-section">
-          <button id="bookbtn">Book Now</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="about">
+  <h2>About Us</h2>
+</section>
 
-  <script src="assets/js/offer.js"></script>
-   
+<section id="support">
+  <h2>Customer Support</h2>
+  <p>Here is the support section.</p>
+</section>
+
+<script>
+  // Wait for the page to fully load
+  window.addEventListener("DOMContentLoaded", () => {
+    // Check if URL has a hash
+    const hash = window.location.hash; // e.g., "#support"
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        // Scroll to the element smoothly
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  });
+</script>
+
 </body>
-
 </html>

@@ -445,6 +445,21 @@
                   });
                 </script>
 
+                <script>
+                  window.addEventListener("DOMContentLoaded", () => {
+                    let hash = window.location.hash; // e.g., "#contactnow?address-rental+basic-address-rental-service"
+
+                    if (hash) {
+                      // Remove the leading '#' and anything after '?'
+                      let sectionId = hash.substring(1).split('?')[0];
+                      const element = document.getElementById(sectionId);
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }
+                  });
+                </script>
+
 
               </div>
             </div>
@@ -462,7 +477,8 @@
             <div class="logo">
               <img src="assets/images/black-logo.png" alt="Plot Listing">
             </div>
-            <p class="footer-text">Comfort Keys Oy is dedicated to providing excellence in cleaning services, address rentals
+            <p class="footer-text">Comfort Keys Oy is dedicated to providing excellence in cleaning services, address
+              rentals
               services, and
               Airbnb rooms for guests. We offer customized cleaning solutions, high-quality address rental options, and
               professional
@@ -524,7 +540,7 @@
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/offer.js"></script>
-   
+
 
   <script src="js/translator.js"></script>
   <script src="/js/gt.min.js" data-gt-widget-id="43217984"></script>
