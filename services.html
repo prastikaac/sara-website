@@ -22,6 +22,8 @@
   <link rel="stylesheet" href="assets/css/templatemo-plot-listing.css">
   <link rel="stylesheet" href="assets/css/animated.css">
   <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="assets/css/offer.css">
 
 </head>
 
@@ -45,10 +47,10 @@
   <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
       <div class="row">
-        <a href="/index.html">
+        <a href="index.html">
           <h1 class="header-txt">Comfort Keys Oy</h1>
         </a>
-        <div class="col-12">
+        <div class="col-12 phone-header">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="index.html" class="logo">
@@ -57,12 +59,14 @@
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
 
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html#cleaning" class="active">Services</a></li>
+              <li><a href="pricing.html#cleaning">Pricing</a></li>
               <li><a href="contact-us.html">Contact Us</a></li>
               <li>
-                <div class="main-white-button"><a href="https://prastikaac.github.io/sara-website/pricing.html"><i class="fa fa-plus"></i> Book Services & Rentals</a></div>
+                <div class="main-white-button"> <div>
+                    <div id="gt-mordadam-43217984"></div>
+                  </div></div>
               </li>
             </ul>
             <a class='menu-trigger'>
@@ -99,33 +103,63 @@
             <div class="grid">
               <div class="row">
                 <div class="col-lg-12">
-                  <div class="menu">
-                    <div class="first-thumb" id="cleaning-tab">
+                  <div class="menu services-menu">
+                    <div class="first-thumb services-tab" id="cleaning-tab">
                       <div class="thumb">
-                        <span class="icon"><img src="assets/images/search-icon-01.png" alt="">
-                          <h4 style="margin-left: -20px;">Cleaning</h4>
+                        <span class="icon tab-icons"><img src="assets/images/search-icon-01.png" alt="">
                         </span>
+                        <h4 class="services-cleaning">Cleaning</h4>
                       </div>
                     </div>
-                    <div id="address-rental-tab">
+                    <div class="services-tab" id="address-rental-tab">
                       <div class="thumb">
-                        <span class="icon"><img src="assets/images/search-icon-02.png" alt="">
-                          <h4>Address Rental</h4>
+                        <span class="icon tab-icons"><img src="assets/images/search-icon-02.png" alt="">
                         </span>
+                        <h4>Address Rental</h4>
                       </div>
                     </div>
-                    <div style="border-bottom-right-radius: 7px !important;" id="airbnb-rooms-tab">
+                    <div class="services-tab" style="border-bottom-right-radius: 7px !important;" id="airbnb-rooms-tab">
                       <div class="thumb">
-                        <span class="icon"><img src="assets/images/search-icon-03.png" alt="">
-                          <h4>AirBnb Rooms</h4>
+                        <span class="icon tab-icons"><img src="assets/images/search-icon-03.png" alt="">
                         </span>
+                        <h4>AirBnb Rooms</h4>
                       </div>
                     </div>
                   </div>
                 </div>
+
+
+
+                <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+                    const hash = window.location.hash; // e.g. "#address-rental"
+
+                    // Remove active class from all tabs and all content sections
+                    document.querySelectorAll(".menu > div, .cleaning, .address-rental, .airbnb-rooms")
+                      .forEach(el => el.classList.remove("active"));
+
+                    if (hash) {
+                      // Map hash to tab IDs and content classes
+                      const map = {
+                        "#cleaning": { tab: "cleaning-tab", content: ".cleaning" },
+                        "#address-rental": { tab: "address-rental-tab", content: ".address-rental" },
+                        "#airbnb-rooms": { tab: "airbnb-rooms-tab", content: ".airbnb-rooms" }
+                      };
+
+                      const target = map[hash];
+                      if (target) {
+                        // Add active to the tab
+                        document.getElementById(target.tab).classList.add("active");
+                        // Add active to the content block
+                        document.querySelector(target.content)?.classList.add("active");
+                      }
+                    }
+                  });
+                </script>
+
                 <div class="col-lg-12">
                   <ul class="nacc">
-                    <li class="active">
+                    <li class="cleaning">
                       <div>
                         <div class="thumb">
                           <div class="row">
@@ -134,15 +168,14 @@
                                 <div class="row">
                                   <div class="col-lg-6">
                                     <div class="top-icon">
-                                      <span style="margin-left: 20px;" class="icon"><img
-                                          src="assets/images/search-icon-01.png" alt="">
+                                      <span class="icon main-icon"><img src="assets/images/search-icon-01.png" alt="">
                                         <h4 style="margin-left: 5px;">Cleaning</h4>
                                       </span>
                                     </div>
                                   </div>
                                   <div class="col-lg-6">
                                     <div class="main-white-button">
-                                      <a href="#"><i class="fa fa-plus"></i> Order Now</a>
+                                      <a href="pricing.html#cleaning"><i class="fa fa-plus"></i> Order Now</a>
                                     </div>
                                   </div>
                                 </div>
@@ -257,7 +290,7 @@
                         </div>
                       </div>
                     </li>
-                    <li>
+                    <li class="address-rental">
                       <div>
                         <div class="thumb">
                           <div class="row">
@@ -266,15 +299,14 @@
                                 <div class="row">
                                   <div class="col-lg-6">
                                     <div class="top-icon">
-                                      <span style="margin-left: 10px;" class="icon"><img
-                                          src="assets/images/search-icon-02.png" alt="">
-                                        <h4 style="margin-left: 12px;"> Address Rental</h4>
+                                      <span class="icon main-icon"><img src="assets/images/search-icon-02.png" alt="">
+                                        <h4 class="title-text" style="margin-left: 12px;"> Address Rental</h4>
                                       </span>
                                     </div>
                                   </div>
                                   <div class="col-lg-6">
                                     <div class="main-white-button">
-                                      <a href="#"><i class="fa fa-plus"></i>Book Now</a>
+                                      <a href="pricing.html#address-rental"><i class="fa fa-plus"></i>Book Now</a>
                                     </div>
                                   </div>
                                 </div>
@@ -386,7 +418,7 @@
                         </div>
                       </div>
                     </li>
-                    <li>
+                    <li class="airbnb-rooms">
                       <div>
                         <div class="thumb">
                           <div class="row">
@@ -395,15 +427,14 @@
                                 <div class="row">
                                   <div class="col-lg-6">
                                     <div class="top-icon">
-                                      <span style="margin-left: 10px;" class="icon"><img
-                                          src="assets/images/search-icon-03.png" alt="">
-                                        <h4 style="margin-left: 10px;">AirBnb Rooms</h4>
+                                      <span class="icon main-icon"><img src="assets/images/search-icon-03.png" alt="">
+                                        <h4 class="title-text" style="margin-left: 10px;">AirBnb Rooms</h4>
                                       </span>
                                     </div>
                                   </div>
                                   <div class="col-lg-6">
                                     <div class="main-white-button">
-                                      <a href="#"><i class="fa fa-plus"></i> Book Now</a>
+                                      <a href="pricing.html#airbnb-rooms"><i class="fa fa-plus"></i> Book Now</a>
                                     </div>
                                   </div>
                                 </div>
@@ -651,7 +682,8 @@
             <div class="logo">
               <img src="assets/images/black-logo.png" alt="Plot Listing">
             </div>
-            <p>Comfort Oy is dedicated to providing excellence in cleaning services, address rentals services, and
+            <p class="footer-text">Comfort Keys Oy is dedicated to providing excellence in cleaning services, address rentals
+              services, and
               Airbnb rooms for guests. We offer customized cleaning solutions, high-quality address rental options, and
               professional
               Airbnb rooms to deliver seamless, stress-free experiences for our clients.</p>
@@ -759,6 +791,16 @@
     });
 
   </script>
+
+     <script src="assets/js/main.js"></script>
+  <script src="assets/js/offer.js"></script>
+   
+
+  <script src="js/translator.js"></script>
+  <script src="/js/gt.min.js" data-gt-widget-id="43217984"></script>
+
+
+
 </body>
 
 </html>
