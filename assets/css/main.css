@@ -700,3 +700,40 @@ body.drK .moresvg {
 .translator {
   display: block;
 }
+
+
+
+/* header has BOTH classes ...background-header */
+@media screen and (max-width: 768px) {
+  .header-area.header-sticky.wow.slideInDown.animated.clicked-header.background-header .gt_white_content {
+    top: 422% !important;
+  }
+}
+
+/* header has clicked-header but NO background-header */
+@media screen and (max-width: 768px) {
+  .header-area.header-sticky.wow.slideInDown.animated.clicked-header .gt_white_content {
+    top: 356% !important;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .gt_white_content {
+    width: 100% !important;
+    max-height: 1000px !important;
+    position: fixed !important;
+    border-radius: 0px !important;
+  }
+
+
+  .translator-block {
+    margin-top: -2px;
+    display: block !important;
+  }
+
+  .glink.nturl {
+    padding-left: 30px !important;
+  }
+}
