@@ -1,49 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
-  <style>
-    html {
-      scroll-behavior: smooth; /* optional for smooth scrolling */
-    }
-    section {
-      height: 500px;
-      padding: 20px;
-      border-bottom: 1px solid #ccc;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Translate | Find Jobs in Finland</title>
+  <link rel="stylesheet" href="css/main.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DRFHS58ET"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-7DRFHS58ET');
+  </script>
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
+  <div>
+    <div id="gt-mordadam-43217984"></div>
+  </div>
 
-<section id="home">
-  <h2>Home Section</h2>
-</section>
+  <p class="px-4">This is a test paragraph for you :)</p>
 
-<section id="about">
-  <h2>About Us</h2>
-</section>
+  <script src="js/translator.js"></script>
+  <script src="/js/gt.min.js" data-gt-widget-id="43217984"></script>
 
-<section id="support">
-  <h2>Customer Support</h2>
-  <p>Here is the support section.</p>
-</section>
-
-<script>
-  // Wait for the page to fully load
-  window.addEventListener("DOMContentLoaded", () => {
-    // Check if URL has a hash
-    const hash = window.location.hash; // e.g., "#support"
-    if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        // Scroll to the element smoothly
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  });
-</script>
 
 </body>
+
+
 </html>
